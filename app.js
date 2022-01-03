@@ -1,15 +1,9 @@
-const age = parseInt(prompt("How Old Are You?"));
+const loginForm = document.querySelector(".login-form");
+const loginInput = document.querySelector(".login-form input");
 
-function drinkAge(age) {
-  if (isNaN(age) || age <= 0) {
-    return "Plz Enter The Right Value";
-  } else if (age < 18) {
-    return "How Dare You?";
-  } else if (age >= 18 && age < 50) {
-    return "Enjoy Your Drink";
-  } else {
-    return "You Should Take Care Of Your Own Good";
-  }
+function onLoginSubmit(event) {
+  event.preventDefault();
+  console.log(loginInput.value);
 }
 
-console.log(drinkAge(age));
+loginForm.addEventListener("submit", onLoginSubmit);
