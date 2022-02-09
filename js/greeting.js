@@ -5,9 +5,21 @@ const greeting = document.querySelector("#greeting");
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
+const hellos = [
+  "Bonjour",
+  "Hola",
+  "Privet",
+  "你好",
+  "Ciao",
+  "नमस्ते",
+  "안녕하세요",
+];
+
+const chosenHello = hellos[Math.floor(Math.random() * hellos.length)];
+
 function paintGreetings() {
   const username = localStorage.getItem(USERNAME_KEY);
-  greeting.innerText = `Hello ${username}`;
+  greeting.innerText = `${chosenHello}, ${username}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
